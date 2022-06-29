@@ -202,7 +202,7 @@ func Init() models.FileDownloader {
 
 	m.Handle("/download", http.TimeoutHandler(http.HandlerFunc(DownloadHandler), time.Second*2, "RequestTimeout"))
 	m.Handle("/health", http.TimeoutHandler(http.HandlerFunc(HealthHandler), time.Second*2, "RequestTimeout"))
-	m.Handle("/updatePreference", http.TimeoutHandler(http.HandlerFunc(UpdatePreferenceHandler), time.Second*2, "RequestTimeout"))
+	m.Handle("/preference", http.TimeoutHandler(http.HandlerFunc(UpdatePreferenceHandler), time.Second*2, "RequestTimeout"))
 
 	downloads := make(map[uuid.UUID]models.Download)
 
